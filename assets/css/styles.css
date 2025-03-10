@@ -166,3 +166,86 @@ footer {
       margin-left: 210px;
   }
 }
+
+/* Contenitore descrizione */
+.descrizione-container {
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo della sezione */
+.descrizione-container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Testo della descrizione */
+.descrizione-container p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Sezione statistiche sui videogiochi */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: #007bff;
+  color: white;
+  padding: 30px 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.stat {
+  flex: 1;
+  min-width: 150px;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat p {
+  font-size: 1rem;
+  margin: 5px 0 0;
+}
+
+/* Sezione citazione famosa */
+.quote-container {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+  margin: 30px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container blockquote {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.quote-container span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
