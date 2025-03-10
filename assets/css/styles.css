@@ -93,12 +93,19 @@ header {
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 20px;
-  margin-bottom: 100px;
 }
 
 #timeline-wrapper {
   width: 70%;
   overflow: hidden;
+}
+
+.timeline-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom:50px;
 }
 
 .timeline-content {
@@ -131,7 +138,7 @@ header {
   object-fit: cover;
 }
 
-/* Frecce della timeline */
+/* Stili per le frecce */
 button#prevBtn, button#nextBtn {
   background: #ffffff;
   border: none;
@@ -140,10 +147,31 @@ button#prevBtn, button#nextBtn {
   font-size: 20px;
   cursor: pointer;
   border-radius: 50%;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button#prevBtn:hover, button#nextBtn:hover {
   background: #ffd700;
+  transform: scale(1.1);
+}
+
+/* 📌 Responsive: ridimensioniamo le frecce su schermi piccoli */
+@media (max-width: 768px) {
+  .timeline-navigation {
+    gap: 10px;
+  }
+
+  button#prevBtn, button#nextBtn {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  button#prevBtn, button#nextBtn {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
 }
 
 /* Footer */
