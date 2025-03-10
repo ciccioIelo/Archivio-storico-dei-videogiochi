@@ -17,14 +17,15 @@ html, body {
 
 /* Sidebar moderna */
 .sidebar {
-  background: linear-gradient(135deg, #2a2a2a, #3e3e3e); /* Sfondo uniforme */
+  background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
   color: white;
   padding: 1.5rem;
   height: 100vh;
-  width: 250px; /* Larghezza fissa */
+  width: 250px;
   position: fixed;
   left: 0;
   overflow-y: auto;
+  transition: width 0.3s ease;
 }
 
 /* Titolo della sidebar */
@@ -66,12 +67,13 @@ html, body {
 /* Contenuto principale */
 .main-content {
   flex-grow: 1;
-  margin-left: 270px; /* Deve partire dopo la sidebar */
+  margin-left: 270px;
   padding: 20px;
   max-width: 1000px;
   margin-right: auto;
   text-align: center;
   background-color: #ffffff;
+  transition: margin-left 0.3s ease;
 }
 
 /* Header */
@@ -88,9 +90,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
   margin-top: 20px;
-  margin-bottom:100px;
+  margin-bottom: 100px;
 }
 
 #timeline-wrapper {
@@ -150,21 +153,10 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, #2a2a2a, #3e3e3e); /* Sfondo uniforme */
+  background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
   color: white;
-  padding: 10px; /* Ridotta altezza */
-  font-size: 0.9rem; /* Riduzione del testo */
-}
-
-/* Media Query per dispositivi mobili */
-@media (max-width: 768px) {
-  .sidebar {
-      width: 200px;
-  }
-
-  .main-content {
-      margin-left: 210px;
-  }
+  padding: 10px;
+  font-size: 0.9rem;
 }
 
 /* Contenitore descrizione */
@@ -197,6 +189,7 @@ footer {
 /* Sezione statistiche sui videogiochi */
 .stats-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
   background: #007bff;
@@ -212,17 +205,6 @@ footer {
   min-width: 150px;
 }
 
-.stat h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.stat p {
-  font-size: 1rem;
-  margin: 5px 0 0;
-}
-
 /* Sezione citazione famosa */
 .quote-container {
   text-align: center;
@@ -236,16 +218,54 @@ footer {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.quote-container blockquote {
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
+/* 📌 Media Query per schermi medi (tablet) */
+@media (max-width: 992px) {
+  .sidebar {
+      width: 200px;
+  }
+  .main-content {
+      margin-left: 220px;
+      max-width: calc(100% - 220px);
+  }
 }
 
-.quote-container span {
-  display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
+/* 📌 Media Query per schermi piccoli (mobile) */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 180px;
+      padding: 1rem;
+  }
+  .sidebar h2 {
+      font-size: 1.2rem;
+  }
+  .sidebar .nav-link {
+      font-size: 1rem;
+      padding: 10px;
+  }
+  .main-content {
+      margin-left: 190px;
+      max-width: calc(100% - 190px);
+      padding: 15px;
+  }
+  .stats-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .quote-container {
+      font-size: 1rem;
+      padding: 15px;
+  }
+}
+
+/* 📌 Media Query per schermi extra piccoli (smartphone) */
+@media (max-width: 576px) {
+  .sidebar {
+      width: 150px;
+      padding: 0.8rem;
+  }
+  .main-content {
+      margin-left: 160px;
+      max-width: calc(100% - 160px);
+      padding: 10px;
+  }
 }
