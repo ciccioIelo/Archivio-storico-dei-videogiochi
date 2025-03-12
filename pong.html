@@ -28,7 +28,107 @@
         </div>
 
         <a href="index.html" class="back-button">⬅ Torna alla Home</a>
-    </div>
 
+        <!-- Bottone per visualizzare i commenti -->
+    <button id="toggle-comments" class="comment-button">💬 Visualizza Commenti</button>
+
+    <!-- Sezione Commenti (inizialmente nascosta) -->
+    <div id="comment-section" class="comment-section hidden">
+        <h3>💬 Commenti</h3>
+        
+        <div id="comments-container">
+            <p class="no-comments">Nessun commento ancora. Aggiungi il primo!</p>
+        </div>
+
+        <!-- Nuovo campo Nome -->
+        <input type="text" id="comment-author" placeholder="Il tuo nome..." class="comment-input">
+
+        <!-- Campo testo per il commento -->
+        <textarea id="comment-input" placeholder="Scrivi un commento..." class="comment-input"></textarea>
+        
+        <button id="add-comment" class="add-comment-button">Aggiungi Commento</button>
+</div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleButton = document.getElementById("toggle-comments");
+            const commentSection = document.getElementById("comment-section");
+            const commentAuthor = document.getElementById("comment-author");
+            const commentInput = document.getElementById("comment-input");
+            const addCommentButton = document.getElementById("add-comment");
+            const commentsContainer = document.getElementById("comments-container");
+
+            // Mostra/Nasconde la sezione commenti
+            toggleButton.addEventListener("click", () => {
+                if (commentSection.style.display === "none" || commentSection.style.display === "") {
+                    commentSection.style.display = "block";
+                    toggleButton.innerText = "🔽 Nascondi Commenti";
+                } else {
+                    commentSection.style.display = "none";
+                    toggleButton.innerText = "💬 Visualizza Commenti";
+                }
+            });
+
+            // Funzione per creare le reazioni ai commenti
+            function createReactions() {
+                const reactions = ["👍", "❤️", "😂"]; // Lista di emoji disponibili
+                const reactionContainer = document.createElement("div");
+                reactionContainer.classList.add("reaction-container");
+
+                reactions.forEach((emoji) => {
+                    const reactionButton = document.createElement("button");
+                    reactionButton.classList.add("reaction-button");
+                    reactionButton.innerText = emoji;
+                    reactionButton.dataset.count = 0; // Memorizza il numero di reazioni
+                    reactionButton.addEventListener("click", () => {
+                        let count = parseInt(reactionButton.dataset.count);
+                        count++;
+                        reactionButton.dataset.count = count;
+                        reactionButton.innerText = `${emoji} ${count}`; // Aggiorna il numero
+                    });
+                    reactionContainer.appendChild(reactionButton);
+                });
+
+                return reactionContainer;
+            }
+
+            // Funzione per aggiungere un nuovo commento con reazioni
+            addCommentButton.addEventListener("click", () => {
+                const author = commentAuthor.value.trim();
+                const commentText = commentInput.value.trim();
+
+                if (author === "" || commentText === "") {
+                    alert("Inserisci sia il nome che il commento!");
+                    return;
+                }
+
+                const noCommentText = document.querySelector(".no-comments");
+                if (noCommentText) {
+                    noCommentText.remove();
+                }
+
+                const newComment = document.createElement("div");
+                newComment.classList.add("comment");
+
+                const authorElement = document.createElement("span");
+                authorElement.classList.add("comment-author");
+                authorElement.innerText = author;
+
+                const textElement = document.createElement("p");
+                textElement.innerText = commentText;
+
+                const reactions = createReactions(); // Aggiunge le reazioni al commento
+
+                newComment.appendChild(authorElement);
+                newComment.appendChild(textElement);
+                newComment.appendChild(reactions); // Inserisce le reazioni sotto il commento
+
+                commentsContainer.appendChild(newComment);
+
+                commentAuthor.value = "";
+                commentInput.value = "";
+            });
+        });
+    </script>
 </body>
 </html>

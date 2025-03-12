@@ -85,3 +85,132 @@ iframe {
     background: #0056b3;
     transform: scale(1.05);
 }
+
+/* Bottone Visualizza Commenti */
+.comment-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #6c757d;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comment-button:hover {
+    background: #5a6268;
+}
+
+/* Sezione Commenti */
+.comment-section {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.comment-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Input commento */
+.comment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    resize: none;
+}
+
+/* Bottone Aggiungi Commento */
+.add-comment-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-comment-button:hover {
+    background: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Input Nome */
+#comment-author {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Contenitore dei commenti */
+#comments-container {
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Singolo commento */
+.comment {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Nome dell'autore */
+.comment-author {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Contenitore delle reazioni */
+.reaction-container {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+/* Pulsanti reazione (ridotti) */
+.reaction-button {
+    background: #f0f0f0;
+    border: none;
+    padding: 4px 8px; /* Ridotto il padding */
+    font-size: 0.8rem; /* Dimensione più piccola */
+    border-radius: 15px; /* Meno arrotondato */
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.reaction-button:hover {
+    background: #e0e0e0;
+    transform: scale(1.05); /* Hover più leggero */
+}
