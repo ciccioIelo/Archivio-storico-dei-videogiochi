@@ -1,55 +1,68 @@
 /* Stile generale */
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #e3e6f3, #f8f9fa);
-    color: #333;
+    background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+    color: white;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;  /* Cambiato da center a flex-start */
+    align-items: flex-start;
     min-height: 100vh;
-    overflow-y: auto;  /* Assicura che il contenuto sia sempre visibile */
 }
 
 /* Contenitore principale */
 .game-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 700px;
+    max-width: 750px;
     width: 90%;
-    margin-top: 20px; /* Aggiunto per evitare il taglio in alto */
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
 }
 
 /* Titolo del gioco */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
-    color: #222;
-    margin-top: 20px;  /* Aggiunto per distanziarlo dall'inizio */
+    color: #ffd700;
+    text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+/* Anno del gioco */
+.game-year {
+    font-size: 1.4rem;
+    color: #d1d1d1;
+    margin-bottom: 15px;
 }
 
 /* Immagine del gioco */
 .game-image {
     width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 15px; /* Aggiunto per evitare che venga tagliata */
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.game-image:hover {
+    transform: scale(1.05);
 }
 
 /* Informazioni sul gioco */
 .game-info {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: left;
-    background: #f0f0f0;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.1);
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
     margin-top: 20px;
 }
 
@@ -58,22 +71,28 @@ h1 {
     margin-top: 20px;
 }
 
+.game-video h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
 /* Stile per il video */
 iframe {
     width: 100%;
-    max-width: 560px;
-    height: 315px;
+    max-width: 600px;
+    height: 340px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Bottone per tornare indietro */
 .back-button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #007bff;
-    color: white;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #ffd700;
+    color: black;
     text-decoration: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -82,7 +101,7 @@ iframe {
 }
 
 .back-button:hover {
-    background: #0056b3;
+    background: #e6c200;
     transform: scale(1.05);
 }
 
@@ -90,104 +109,92 @@ iframe {
 .comment-button {
     display: block;
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: #6c757d;
     color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 8px;
     margin-top: 20px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .comment-button:hover {
     background: #5a6268;
+    transform: scale(1.05);
 }
 
 /* Sezione Commenti */
 .comment-section {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     margin-top: 15px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     display: none;
-}
-
-.comment-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
 }
 
 /* Input commento */
 .comment-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: none;
     border-radius: 8px;
     font-size: 1rem;
     margin-top: 10px;
-    resize: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.comment-input::placeholder {
+    color: #d1d1d1;
 }
 
 /* Bottone Aggiungi Commento */
 .add-comment-button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #007bff;
     color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 8px;
     margin-top: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .add-comment-button:hover {
     background: #0056b3;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Input Nome */
-#comment-author {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-top: 10px;
+    transform: scale(1.05);
 }
 
 /* Contenitore dei commenti */
 #comments-container {
     margin-top: 15px;
-    padding: 10px;
-    background: white;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.1);
     max-height: 250px;
     overflow-y: auto;
 }
 
 /* Singolo commento */
 .comment {
-    background: #e9ecef;
+    background: rgba(255, 255, 255, 0.1);
     padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 /* Nome dell'autore */
 .comment-author {
     font-weight: bold;
-    color: #007bff;
+    color: #ffd700;
     margin-bottom: 5px;
     display: block;
 }
@@ -195,22 +202,74 @@ iframe {
 /* Contenitore delle reazioni */
 .reaction-container {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     margin-top: 5px;
 }
 
-/* Pulsanti reazione (ridotti) */
+/* Pulsanti reazione */
 .reaction-button {
-    background: #f0f0f0;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
-    padding: 4px 8px; /* Ridotto il padding */
-    font-size: 0.8rem; /* Dimensione più piccola */
-    border-radius: 15px; /* Meno arrotondato */
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 15px;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.1s ease;
+    color: white;
 }
 
 .reaction-button:hover {
-    background: #e0e0e0;
-    transform: scale(1.05); /* Hover più leggero */
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .game-year {
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .game-year {
+        font-size: 1.1rem;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
+.game-stats {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.game-stats h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.game-stats p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
