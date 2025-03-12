@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
-        { title: "Pong", year: 1972, genre: "Arcade", img: "assets/img/pong.jpg" },
+        { title: "Pong", year: 1972, genre: "Arcade", img: "assets/img/pong.jpg", staticPage: "pong.html" },
         { title: "Tetris", year: 1984, genre: "Puzzle", img: "assets/img/tetris.jpg" },
-        { title: "Super Mario Bros", year: 1985, genre: "Platform", img: "assets/img/mario.jpg" },
+        { title: "Super Mario Bros", year: 1985, genre: "Platform", img: "assets/img/mario.jpg", staticPage: "mario.html" },
         { title: "Street Fighter II", year: 1991, genre: "Picchiaduro", img: "assets/img/streetfighter.jpg" },
         { title: "Pokémon Rosso/Blu", year: 1996, genre: "RPG", img: "assets/img/pokemon.jpg" },
         { title: "The Legend of Zelda", year: 1998, genre: "RPG", img: "assets/img/zelda.jpg" }
@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderGames(filteredGames) {
         gameList.innerHTML = "";
         filteredGames.forEach(game => {
+            let detailsPage = game.staticPage ? game.staticPage : `dettaglio.html?game=${encodeURIComponent(game.title)}`;
+
+            updateMetadata(game);
+
             gameList.innerHTML += `
                 <div class="col-lg-3 col-md-4 mb-4">
                     <div class="card" onclick="updateMetadata(${JSON.stringify(game)})">
@@ -23,14 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="card-body">
                             <h5 class="card-title">${game.title}</h5>
                             <p class="card-text">${game.year} | ${game.genre}</p>
-                            <a href="dettaglio.html?game=${encodeURIComponent(game.title)}" class="btn btn-primary">Scopri di più</a>
+                            <a href="${detailsPage}" class="btn btn-primary">Scopri di più</a>
                         </div>
                     </div>
                 </div>
             `;
         });
     }
-    
 
     function filterGames() {
         const searchText = searchInput.value.toLowerCase();

@@ -86,22 +86,44 @@ iframe {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Bottone per tornare indietro */
-.back-button {
-    display: inline-block;
+/* Contenitore per i pulsanti di navigazione */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-top: 25px;
+}
+
+/* Bottone Torna alla Home */
+.back-button, .catalog-button {
+    display: inline-block;
     padding: 14px 28px;
-    background: #ffd700;
-    color: black;
-    text-decoration: none;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
+    text-decoration: none;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Stile per il pulsante Home */
+.back-button {
+    background: #007bff;
+    color: white;
+}
+
 .back-button:hover {
-    background: #e6c200;
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Stile per il pulsante Catalogo */
+.catalog-button {
+    background: #007bff;
+    color: white;
+}
+
+.catalog-button:hover {
+    background: #0056b3;
     transform: scale(1.05);
 }
 
