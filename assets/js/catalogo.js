@@ -15,25 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderGames(filteredGames) {
         gameList.innerHTML = "";
+      
         filteredGames.forEach(game => {
-            let detailsPage = game.staticPage ? game.staticPage : `dettaglio.html?game=${encodeURIComponent(game.title)}`;
-
-            updateMetadata(game);
-
-            gameList.innerHTML += `
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <div class="card" onclick="updateMetadata(${JSON.stringify(game)})">
-                        <img src="${game.img}" class="card-img-top" alt="${game.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${game.title}</h5>
-                            <p class="card-text">${game.year} | ${game.genre}</p>
-                            <a href="${detailsPage}" class="btn btn-primary">Scopri di più</a>
-                        </div>
-                    </div>
+          // Se "staticPage" esiste, usa la pagina statica
+          // Altrimenti, costruisci l’URL per la pagina dinamica
+          let detailsPage = game.staticPage 
+            ? game.staticPage 
+            : `dettaglio.html?game=${encodeURIComponent(game.title)}`;
+      
+          // Aggiorna i metadati (se vuoi, per la pagina catalogo)
+          updateMetadata(game);
+      
+          // Genera la card
+          gameList.innerHTML += `
+            <div class="col-lg-3 col-md-4 mb-4">
+              <div class="card" onclick="updateMetadata(${JSON.stringify(game)})">
+                <img src="${game.img}" class="card-img-top" alt="${game.title}">
+                <div class="card-body">
+                  <h5 class="card-title">${game.title}</h5>
+                  <p class="card-text">${game.year} | ${game.genre}</p>
+                  <a href="${detailsPage}" class="btn btn-primary">Scopri di più</a>
                 </div>
-            `;
+              </div>
+            </div>
+          `;
         });
     }
+    
 
     function filterGames() {
         const searchText = searchInput.value.toLowerCase();

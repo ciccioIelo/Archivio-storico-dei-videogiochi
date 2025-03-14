@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Dettaglio Videogioco</title>
+
+  <!-- Metadati DC placeholder -->
+  <meta name="DC.Title" content="Placeholder Title">
+  <meta name="DC.Creator" content="Placeholder Creator">
+  <meta name="DC.Subject" content="Placeholder Subject">
+  <meta name="DC.Description" content="Placeholder Description">
+  <meta name="DC.Publisher" content="Placeholder Publisher">
+  <meta name="DC.Date" content="2000">
+  <meta name="DC.Type" content="Videogioco">
+  <meta name="DC.Format" content="Digital">
+  <meta name="DC.Language" content="it">
+
+  <link rel="stylesheet" href="assets/css/game-details.css">
+</head>
+<body>
+  <div class="game-container" id="game-details-container">
+    <!-- Contenuto dinamico iniettato da JS -->
+    <!-- Bottone per visualizzare i commenti -->
+    <button id="toggle-comments" class="comment-button">💬 Visualizza Commenti</button>
+
+    <!-- Sezione Commenti (inizialmente nascosta) -->
+    <div id="comment-section" class="comment-section hidden">
+        <h3>💬 Commenti</h3>
+        
+        <div id="comments-container">
+            <p class="no-comments">Nessun commento ancora. Aggiungi il primo!</p>
+        </div>
+
+        <!-- Nuovo campo Nome -->
+        <input type="text" id="comment-author" placeholder="Il tuo nome..." class="comment-input">
+
+        <!-- Campo testo per il commento -->
+        <textarea id="comment-input" placeholder="Scrivi un commento..." class="comment-input"></textarea>
+        
+        <button id="add-comment" class="add-comment-button">Aggiungi Commento</button>
+    </div>
+  </div>
+    <script src="assets/js/comments.js"></script>
+    <script src="assets/js/dettaglio.js"></script>
+</body>
+</html>
