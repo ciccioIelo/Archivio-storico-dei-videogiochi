@@ -13,20 +13,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
-    // Funzione per ottenere il numero di elementi visibili in base alla larghezza dello schermo
+    // Determina il link di dettaglio in base al titolo del gioco
+    function getDetailsLink(gameTitle) {
+        if (gameTitle === "Pong") {
+            return "pong.html";
+        } else if (gameTitle === "Super Mario Bros") {
+            return "mario.html";
+        } else {
+            // Pagina dinamica per gli altri
+            return `dettaglio.html?game=${encodeURIComponent(gameTitle)}`;
+        }
+    }
+
+    // Ritorna quanti elementi mostrare in base alla larghezza dello schermo
     function getItemsPerPage() {
         if (window.innerWidth < 768) return 1;  // Smartphone grandi
         if (window.innerWidth < 992) return 2;  // Tablet
-        return 3; // Desktop
+        return 3;                               // Desktop
     }
 
     function renderTimeline() {
-        const itemsPerPage = getItemsPerPage(); // Ricalcola sempre il numero di elementi visibili
+        const itemsPerPage = getItemsPerPage();
         timeline.innerHTML = "";
+
         for (let i = currentIndex; i < currentIndex + itemsPerPage && i < games.length; i++) {
             const game = games[i];
+            const detailsPage = getDetailsLink(game.title);
+
+            // Card cliccabile
             timeline.innerHTML += `
-                <div class="card">
+                <div 
+                    class="card" 
+                    style="cursor: pointer;" 
+                    onclick="window.location.href='${detailsPage}'"
+                >
                     <img src="${game.img}" class="card-img-top" alt="${game.title}">
                     <div class="card-body">
                         <h5 class="card-title">${game.year} - ${game.title}</h5>
@@ -35,14 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
         }
+
         updateButtons(itemsPerPage);
     }
 
     function updateButtons(itemsPerPage) {
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex + itemsPerPage >= games.length;
+        prevBtn.disabled = (currentIndex === 0);
+        nextBtn.disabled = (currentIndex + itemsPerPage >= games.length);
     }
 
+    // Scorri avanti
     nextBtn.addEventListener("click", () => {
         const itemsPerPage = getItemsPerPage();
         if (currentIndex + itemsPerPage < games.length) {
@@ -51,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Scorri indietro
     prevBtn.addEventListener("click", () => {
         const itemsPerPage = getItemsPerPage();
         if (currentIndex > 0) {
@@ -59,11 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Ricalcola gli elementi visibili e aggiorna la timeline quando la finestra viene ridimensionata
+    // Ricalcola layout su resize
     window.addEventListener("resize", () => {
-        currentIndex = 0; // Reset per evitare bug
+        currentIndex = 0;
         renderTimeline();
     });
 
+    // Render iniziale
     renderTimeline();
 });
