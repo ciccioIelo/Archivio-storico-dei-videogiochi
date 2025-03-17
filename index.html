@@ -24,7 +24,7 @@
         <h2>Archivio Videogiochi</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">🏠 Home</a>
+                <a class="nav-link active" href="#home">🏠 Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="catalogo.html">📚 Catalogo</a>
@@ -88,6 +88,33 @@
             <div class="timeline-navigation">
                 <button id="prevBtn">&larr;</button>
                 <button id="nextBtn">&rarr;</button>
+            </div>
+        </section>
+        
+        <!-- Sezione Contatti in fondo alla home -->
+        <section id="contatti" class="contact-section">
+            <div class="container text-center">
+              <h2>Contattaci</h2>
+              <p>Hai domande? Per favore, scrivici a:</p>
+              <ul style="list-style: none; padding: 0;">
+                <li>Email: <a href="mailto:info@mioprogetto.it">info@mioprogetto.it</a></li>
+                <li>Telefono: +39 0123 456789</li>
+                <li>Indirizzo: Via Esempio 123, 40100 Bologna</li>
+              </ul>
+          
+              <form action="mailto:info@mioprogetto.it" method="post" enctype="text/plain" class="mt-3">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome:</label>
+                  <input type="text" id="nome" name="nome" class="form-control" required>
+                </div>
+          
+                <div class="mb-3">
+                  <label for="messaggio" class="form-label">Messaggio:</label>
+                  <textarea id="messaggio" name="messaggio" rows="4" class="form-control" required></textarea>
+                </div>
+          
+                <button type="submit" class="btn btn-primary">Invia</button>
+              </form>
             </div>
         </section>
     </div>
