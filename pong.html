@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" prefix="dc: http://purl.org/dc/elements/1.1/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pong - Archivio Storico Videogiochi</title>
+
+    <!-- Metadati Dublin Core nel <head> -->
     <meta name="DC.Title" content="Pong">
     <meta name="DC.Creator" content="Atari">
     <meta name="DC.Subject" content="Videogioco Arcade">
@@ -13,34 +15,58 @@
     <meta name="DC.Type" content="Videogioco">
     <meta name="DC.Format" content="Digital">
     <meta name="DC.Language" content="it">
+
     <link rel="stylesheet" href="assets/css/game-details.css">
 </head>
 <body>
+    <!-- Contenitore principale con attributi RDFa: typeof e about -->
+    <div class="game-container" typeof="dc:InteractiveResource" about="#pongGame">
 
-    <div class="game-container">
-        <h1>Pong</h1>
-        <h2 class="game-year">1972</h2>
+        <!-- Titolo con property="dc:title" -->
+        <h1 property="dc:title">Pong</h1>
+        <!-- Anno (puoi aggiungere property="dc:date" anche qui) -->
+        <h2 class="game-year">
+            <span property="dc:date">1972</span>
+        </h2>
 
+        <!-- Immagine -->
         <img src="assets/img/pong.jpg" alt="Pong" class="game-image">
 
+        <!-- Informazioni generali -->
         <div class="game-info">
-            <p><strong>🎮 Genere:</strong> Arcade</p>
-            <p><strong>🏢 Sviluppatore:</strong> Atari</p>
-            <p><strong>📅 Anno di Rilascio:</strong> 1972</p>
-            <p><strong>📝 Descrizione:</strong> Pong è uno dei primi videogiochi arcade, sviluppato da Atari nel 1972. Simula il gioco del ping pong con una grafica minimalista.</p>
+            <p><strong>🎮 Genere:</strong> 
+               <span property="dc:subject">Arcade</span>
+            </p>
+            <p><strong>🏢 Sviluppatore:</strong> 
+               <span property="dc:creator">Atari</span>
+            </p>
+            <p><strong>📅 Anno di Rilascio:</strong> 
+               <span property="dc:date">1972</span>
+            </p>
+            <p><strong>📝 Descrizione:</strong> 
+               <span property="dc:description">
+                 Pong è uno dei primi videogiochi arcade, sviluppato da Atari nel 1972. 
+                 Simula il gioco del ping pong con una grafica minimalista.
+               </span>
+            </p>
         </div>
 
         <!-- Video YouTube -->
         <div class="game-video">
             <h3>🎥 Guarda il Gameplay</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/fhd7FfGCdCo?si=GWu8waCbZjnVhq64" title="YouTube video player" frameborder="0"></iframe>        
+            <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/fhd7FfGCdCo?si=GWu8waCbZjnVhq64"
+                    title="YouTube video player" frameborder="0">
+            </iframe>        
         </div>
 
+        <!-- Pulsanti di navigazione -->
         <div class="nav-buttons">
             <a href="index.html" class="back-button">⬅ Torna alla Home</a>
             <a href="catalogo.html" class="catalog-button">📚 Vai al Catalogo</a>
         </div>
 
+        <!-- Statistiche e Voti -->
         <div class="game-stats">
             <h3>📊 Statistiche e Voti</h3>
             <p>🌟 <strong>Valutazione Media:</strong> 8.5/10</p>
@@ -48,29 +74,26 @@
             <p>💰 <strong>Copie vendute:</strong> Oltre 10 milioni</p>
         </div>
 
-        <!-- Bottone per visualizzare i commenti -->
+        <!-- Sezione Commenti -->
         <button id="toggle-comments" class="comment-button">💬 Visualizza Commenti</button>
 
-        <!-- Sezione Commenti (inizialmente nascosta) -->
         <div id="comment-section" class="comment-section hidden">
             <h3>💬 Commenti</h3>
-            
             <div id="comments-container">
                 <p class="no-comments">Nessun commento ancora. Aggiungi il primo!</p>
             </div>
-
-            <!-- Nuovo campo Nome -->
             <input type="text" id="comment-author" placeholder="Il tuo nome..." class="comment-input">
-
-            <!-- Campo testo per il commento -->
             <textarea id="comment-input" placeholder="Scrivi un commento..." class="comment-input"></textarea>
-            
             <button id="add-comment" class="add-comment-button">Aggiungi Commento</button>
         </div>
     </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Archivio Storico dei Videogiochi | <a href="index.html#contatti">Contattaci</a></p>
     </footer>
+
+    <!-- Script dei commenti -->
     <script src="assets/js/comments.js"></script>
 </body>
 </html>

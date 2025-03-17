@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" prefix="dc: http://purl.org/dc/elements/1.1/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Mario Bros - Archivio Storico Videogiochi</title>
+    <!-- Metatag DC (serializzazione via <head>) -->
     <meta name="DC.Title" content="Super Mario Bros">
     <meta name="DC.Creator" content="Nintendo">
     <meta name="DC.Subject" content="Videogioco Platform">
-    <meta name="DC.Description" content="Super Mario Bros è uno dei giochi più iconici della storia, rilasciato da Nintendo nel 1985 per NES. Ha rivoluzionato il genere platform e introdotto uno dei personaggi più amati di sempre.">
+    <meta name="DC.Description" 
+          content="Super Mario Bros è uno dei giochi più iconici della storia, 
+                   rilasciato da Nintendo nel 1985 per NES. 
+                   Ha rivoluzionato il genere platform e introdotto uno dei personaggi più amati di sempre.">
     <meta name="DC.Publisher" content="Nintendo">
     <meta name="DC.Date" content="1985">
     <meta name="DC.Type" content="Videogioco">
@@ -17,23 +21,45 @@
 </head>
 <body>
 
-    <div class="game-container">
-        <h1>Super Mario Bros</h1>
-        <h2 class="game-year">1985</h2>
+    <div class="game-container" typeof="dc:InteractiveResource" about="#superMario">
+        <!-- Titolo -->
+        <h1 property="dc:title">Super Mario Bros</h1>
+        <h2 class="game-year">
+            <span property="dc:date">1985</span>
+        </h2>
 
         <img src="assets/img/mario.jpg" alt="Super Mario Bros" class="game-image">
 
         <div class="game-info">
-            <p><strong>🎮 Genere:</strong> Platform</p>
-            <p><strong>🏢 Sviluppatore:</strong> Nintendo</p>
-            <p><strong>📅 Anno di Rilascio:</strong> 1985</p>
-            <p><strong>📝 Descrizione:</strong> Super Mario Bros è uno dei giochi più iconici della storia, rilasciato da Nintendo nel 1985 per NES. Ha rivoluzionato il genere platform e introdotto uno dei personaggi più amati di sempre.</p>
+            <!-- Genere come DC.Subject -->
+            <p><strong>🎮 Genere:</strong> 
+               <span property="dc:subject">Platform</span>
+            </p>
+            <!-- Sviluppatore come DC.Creator -->
+            <p><strong>🏢 Sviluppatore:</strong> 
+               <span property="dc:creator">Nintendo</span>
+            </p>
+            <!-- Anno di rilascio come DC.Date (già messo sopra, ma ripetiamo se vuoi) -->
+            <p><strong>📅 Anno di Rilascio:</strong> 
+               <span property="dc:date">1985</span>
+            </p>
+            <!-- Descrizione come DC.Description -->
+            <p><strong>📝 Descrizione:</strong> 
+               <span property="dc:description">
+                  Super Mario Bros è uno dei giochi più iconici della storia, 
+                  rilasciato da Nintendo nel 1985 per NES. 
+                  Ha rivoluzionato il genere platform e introdotto uno dei personaggi più amati di sempre.
+               </span>
+            </p>
         </div>
 
         <!-- Video YouTube -->
         <div class="game-video">
             <h3>🎥 Guarda il Gameplay</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-avspZlbOWU?si=xUj4rthtSHSNxig1" title="Super Mario Bros Gameplay" frameborder="0"></iframe>        
+            <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/-avspZlbOWU?si=xUj4rthtSHSNxig1" 
+                    title="Super Mario Bros Gameplay" frameborder="0">
+            </iframe>        
         </div>
 
         <div class="nav-buttons">
@@ -59,7 +85,7 @@
                 <p class="no-comments">Nessun commento ancora. Aggiungi il primo!</p>
             </div>
 
-            <!-- Nuovo campo Nome -->
+            <!-- Campo Nome -->
             <input type="text" id="comment-author" placeholder="Il tuo nome..." class="comment-input">
 
             <!-- Campo testo per il commento -->
@@ -68,8 +94,11 @@
             <button id="add-comment" class="add-comment-button">Aggiungi Commento</button>
         </div>
     </div>
+
     <footer>
-        <p>&copy; 2025 Archivio Storico dei Videogiochi | <a href="index.html#contatti">Contattaci</a></p>
+        <p>&copy; 2025 Archivio Storico dei Videogiochi | 
+           <a href="index.html#contatti">Contattaci</a>
+        </p>
     </footer>
     <script src="assets/js/comments.js"></script>
 </body>
