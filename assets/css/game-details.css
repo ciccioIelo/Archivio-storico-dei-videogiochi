@@ -7,7 +7,8 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -22,6 +23,7 @@ body {
     width: 90%;
     backdrop-filter: blur(10px);
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 /* Titolo del gioco */
@@ -295,3 +297,14 @@ iframe {
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
+
+footer {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+    color: white;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
