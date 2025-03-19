@@ -1,12 +1,104 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const games = [
-      { title: "Pong", year: 1972, genre: "Arcade", img: "assets/img/pong.jpg", staticPage: "pong.html" },
-      { title: "Tetris", year: 1984, genre: "Puzzle", img: "assets/img/tetris.jpg" },
-      { title: "Super Mario Bros", year: 1985, genre: "Platform", img: "assets/img/mario.jpg", staticPage: "mario.html" },
-      { title: "Street Fighter II", year: 1991, genre: "Picchiaduro", img: "assets/img/streetfighter.jpg" },
-      { title: "Pokémon Rosso/Blu", year: 1996, genre: "RPG", img: "assets/img/pokemon.jpg" },
-      { title: "The Legend of Zelda", year: 1998, genre: "RPG", img: "assets/img/zelda.jpg" }
-  ];
+    const games = [
+        {
+          title: "Pong",
+          year: 1972,
+          genre: "Arcade",
+          img: "assets/img/pong.jpg",
+          staticPage: "pong.html" // Pagina statica già esistente
+        },
+        {
+          title: "Space Invaders",
+          year: 1978,
+          genre: "Arcade",
+          img: "assets/img/space_invaders.jpg"
+        },
+        {
+          title: "Pac-Man",
+          year: 1980,
+          genre: "Arcade",
+          img: "assets/img/pacman.jpg"
+        },
+        {
+          title: "Donkey Kong",
+          year: 1981,
+          genre: "Platform",
+          img: "assets/img/donkey_kong.jpg"
+        },
+        {
+          title: "Tetris",
+          year: 1984,
+          genre: "Puzzle",
+          img: "assets/img/tetris.jpg"
+        },
+        {
+          title: "Super Mario Bros",
+          year: 1985,
+          genre: "Platform",
+          img: "assets/img/mario.jpg",
+          staticPage: "mario.html" // Pagina statica già esistente
+        },
+        {
+          title: "Ghosts 'n Goblins",
+          year: 1985,
+          genre: "Platform",
+          img: "assets/img/ghosts_goblins.jpg"
+        },
+        {
+          title: "Metroid",
+          year: 1986,
+          genre: "Platform",
+          img: "assets/img/metroid.jpg"
+        },
+        {
+          title: "Street Fighter II",
+          year: 1991,
+          genre: "Picchiaduro",
+          img: "assets/img/streetfighter.jpg"
+        },
+        {
+          title: "Sonic the Hedgehog",
+          year: 1991,
+          genre: "Platform",
+          img: "assets/img/sonic.jpg"
+        },
+        {
+          title: "Mortal Kombat",
+          year: 1992,
+          genre: "Picchiaduro",
+          img: "assets/img/mortal_kombat.jpg"
+        },
+        {
+          title: "Pokémon Rosso/Blu",
+          year: 1996,
+          genre: "RPG",
+          img: "assets/img/pokemon.jpg"
+        },
+        {
+          title: "Resident Evil",
+          year: 1996,
+          genre: "Survival Horror",
+          img: "assets/img/resident_evil.jpg"
+        },
+        {
+          title: "Final Fantasy VII",
+          year: 1997,
+          genre: "RPG",
+          img: "assets/img/ffvii.jpg"
+        },
+        {
+          title: "The Legend of Zelda",
+          year: 1998,
+          genre: "RPG",
+          img: "assets/img/zelda.jpg"
+        },
+        {
+          title: "Crash Bandicoot 3",
+          year: 1998,
+          genre: "Platform",
+          img: "assets/img/crash3.jpg"
+        }
+      ];
 
   const gameList = document.getElementById("gameList");
   const searchInput = document.getElementById("searchInput");
