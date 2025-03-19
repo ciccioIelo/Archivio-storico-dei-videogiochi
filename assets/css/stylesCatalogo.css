@@ -183,3 +183,36 @@ footer {
     padding: 10px;
     font-size: 0.9rem;
 }
+
+/* Bottone Torna su */
+.back-to-top {
+    position: fixed;         
+    bottom: 20px;           /* distanza dal fondo */
+    right: 20px;            /* distanza dal lato destro */
+    
+    /* Dimensioni e aspetto circolare */
+    width: 50px;            
+    height: 50px;           
+    border-radius: 50%;     
+    line-height: 50px;      /* per centrare verticalmente il simbolo */
+    text-align: center;     /* per centrare orizzontalmente il simbolo */
+    
+    /* Colore di sfondo e trasparenza */
+    background-color: rgba(0, 123, 255, 0.8); /* blu semi-trasparente */
+    color: #fff;
+    
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    z-index: 9999;          /* per stare sopra altri elementi */
+    
+    /* Effetto di transizione sul background */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover: colore più intenso e leggera espansione */
+  .back-to-top:hover {
+    background-color: rgba(0, 123, 255, 1);
+    transform: scale(1.05);
+  }
+  
