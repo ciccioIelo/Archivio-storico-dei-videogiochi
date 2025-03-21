@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Project Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      display: flex;
+      scroll-behavior: smooth;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: #2a2a2a;
+      padding: 20px;
+      overflow-y: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+    nav h2 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      display: block;
+      color: #ccc;
+      margin: 8px 0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    main {
+      margin-left: 270px;
+      padding: 40px 30px;
+      max-width: 900px;
+      flex: 1;
+    }
+    section {
+      margin-bottom: 80px;
+    }
+    h1, h2 {
+      color: #2a2a2a;
+    }
+    .top-button, .home-button {
+      position: fixed;
+      right: 20px;
+      padding: 10px 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: #ffd700;
+      color: #2a2a2a;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      z-index: 1000;
+    }
+    .top-button:hover, .home-button:hover {
+      transform: scale(1.05);
+    }
+    .top-button {
+      bottom: 20px;
+    }
+    .home-button {
+      bottom: 70px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      nav {
+        display: none;
+      }
+      main {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Indice</h2>
+    <a href="#idea">Idea</a>
+    <a href="#brief">Brief</a>
+    <a href="#benchmark">Benchmark</a>
+    <a href="#motivazione">Motivazione</a>
+    <a href="#struttura">Struttura</a>
+    <a href="#layout">Layout</a>
+    <a href="#accessibilita">Accessibilità</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#bibliografia">Bibliografia</a>
+  </nav>
+
+  <main>
+    <section id="idea">
+      <h1>Idea</h1>
+      <!-- Contenuto Idea(Abstract) -->
+    </section>
+    <section id="brief">
+      <h2>Brief</h2>
+      <!-- Finalità, Pubblico, Accesso, Contenuti e Dati -->
+    </section>
+    <section id="benchmark">
+      <h2>Benchmark</h2>
+      <!-- Competitor, punti di forza, spunti -->
+    </section>
+    <section id="motivazione">
+      <h2>Motivazione del nuovo sito</h2>
+      <!-- Motivazione e valore aggiunto -->
+    </section>
+    <section id="struttura">
+      <h2>Struttura</h2>
+      <!-- Mappa concettuale, schema, categorie -->
+    </section>
+    <section id="layout">
+      <h2>Layout</h2>
+      <!-- Architettura logica, wireframe -->
+    </section>
+    <section id="accessibilita">
+      <h2>Accessibilità e Usabilità</h2>
+      <!-- Accessibilità, usabilità, tabella di confronto -->
+    </section>
+    <section id="servizi">
+      <h2>Servizi (Funzionalità dinamiche)</h2>
+      <!-- Elementi dinamici, commenti, filtri, future aggiunte -->
+    </section>
+    <section id="bibliografia">
+      <h2>Bibliografia</h2>
+      <!-- Fonti, strumenti, link -->
+    </section>
+  </main>
+
+  <button class="home-button" onclick="location.href='index.html'">🏠 Home</button>
+  <button class="top-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑ Torna su</button>
+</body>
+</html>

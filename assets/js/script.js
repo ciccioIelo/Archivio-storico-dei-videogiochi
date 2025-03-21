@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         { 
           year: 1985, 
-          title: "Ghosts 'n Goblins", 
+          title: "Ghosts and Goblins", 
           img: "assets/img/ghosts_goblins.jpg", 
           desc: "Un platform arcade leggendario, famoso per la sua elevata difficoltà." 
         },
