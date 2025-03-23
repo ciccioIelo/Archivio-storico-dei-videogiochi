@@ -48,7 +48,7 @@ h1 {
 #gameList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra le card */
+    justify-content: center; 
     gap: 20px;
     padding: 20px;
 }
@@ -87,7 +87,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 1; /* Fa sì che tutte le card abbiano la stessa altezza */
+    flex-grow: 1; 
     width: 100%;
     min-height:200px;
     padding: 15px;

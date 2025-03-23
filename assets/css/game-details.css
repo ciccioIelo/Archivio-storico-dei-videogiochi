@@ -312,15 +312,15 @@ footer {
   /* Bottone Torna su */
 .back-to-top {
     position: fixed;         
-    bottom: 20px;           /* distanza dal fondo */
-    right: 20px;            /* distanza dal lato destro */
+    bottom: 20px;          
+    right: 20px;            
     
     /* Dimensioni e aspetto circolare */
     width: 50px;            
     height: 50px;           
     border-radius: 50%;     
     line-height: 50px;      /* per centrare verticalmente il simbolo */
-    text-align: center;     /* per centrare orizzontalmente il simbolo */
+    text-align: center;    
     
     /* Colore di sfondo e trasparenza */
     background-color: rgba(255, 193, 7, 0.8);;

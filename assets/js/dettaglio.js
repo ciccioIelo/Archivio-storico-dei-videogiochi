@@ -130,8 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const currentGame = gamesData[gameTitle];
 
-  // Inseriamo RDFa: ad esempio un <div> con typeof="dc:InteractiveResource" 
-  // ma puoi anche metterlo direttamente su #game-details-container
   container.insertAdjacentHTML("afterBegin", `
     <!-- Inizio RDFa -->
     <div typeof="dc:InteractiveResource" about="#${gameTitle}">
