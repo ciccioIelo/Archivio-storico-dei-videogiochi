@@ -5,90 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Project Plan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      display: flex;
-      scroll-behavior: smooth;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100vh;
-      background: #2a2a2a;
-      padding: 20px;
-      overflow-y: auto;
-      transition: transform 0.3s ease-in-out;
-    }
-    nav h2 {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    nav a {
-      display: block;
-      color: #ccc;
-      margin: 8px 0;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    nav a:hover {
-      color: #ffd700;
-    }
-    main {
-      margin-left: 270px;
-      padding: 40px 30px;
-      max-width: 900px;
-      flex: 1;
-    }
-    section {
-      margin-bottom: 80px;
-    }
-    h1, h2 {
-      color: #2a2a2a;
-    }
-    .top-button, .home-button {
-      position: fixed;
-      right: 20px;
-      padding: 10px 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      background: #ffd700;
-      color: #2a2a2a;
-      cursor: pointer;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-      z-index: 1000;
-    }
-    .top-button:hover, .home-button:hover {
-      transform: scale(1.05);
-    }
-    .top-button {
-      bottom: 20px;
-    }
-    .home-button {
-      bottom: 70px;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      nav {
-        display: none;
-      }
-      main {
-        margin-left: 0;
-        padding: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/stylesWpp.css">
 </head>
 <body>
   <nav>
@@ -108,38 +25,436 @@
     <section id="idea">
       <h1>Idea</h1>
       <!-- Contenuto Idea(Abstract) -->
+      <p>
+        L'idea è realizzare un archivio storico digitale dei videogiochi più iconici che hanno segnato 
+        l'evoluzione del medium videoludico dagli anni '70 ai giorni nostri. Il progetto intende 
+        presentare in maniera interattiva e accessibile informazioni dettagliate sui giochi, arricchite 
+        da risorse multimediali, sistemi di browsing avanzati e funzionalità di interazione utente.
+      </p>
+      <ul>
+        <li>Una homepage con presentazione e timeline interattiva.</li>
+        <li>Un catalogo con filtri per genere, anno e titolo.</li>
+        <li>Pagine di dettaglio per ogni videogioco, arricchite da meta tag Dublin Core e funzionalità di commento.</li>
+        <li>Tool integrativi come grafici (es. Chart.js) per visualizzare statistiche storiche.</li>
+      </ul>
+      <p>
+        Il progetto integra contenuti multimediali (immagini, video e testi), una solida struttura di 
+        navigazione e strumenti interattivi, per garantire un’esperienza utente coinvolgente e informativa.
+      </p>
     </section>
     <section id="brief">
       <h2>Brief</h2>
       <!-- Finalità, Pubblico, Accesso, Contenuti e Dati -->
+      <h3>Finalità</h3>
+      <p>
+        Documentare in maniera interattiva e visuale l’evoluzione della storia dei videogiochi.
+        Offrire un punto di riferimento sia per appassionati che per studiosi del settore.
+        Valorizzare i dati storici con strumenti di visualizzazione come grafici e timeline.
+      </p>
+    
+      <h3>Pubblico</h3>
+      <p>
+        Il sito si rivolge a diversi tipi di pubblico:
+      </p>
+      <ul>
+        <li>Appassionati di videogiochi, collezionisti e storici del settore.</li>
+        <li>Studenti e ricercatori interessati alla storia della tecnologia e del gaming.</li>
+        <li>Pubblico generale curioso di scoprire l’evoluzione dell’intrattenimento digitale.</li>
+      </ul>
+    
+      <h3>Accesso</h3>
+      <p>
+        Il sito è sviluppato con HTML5, CSS3 e JavaScript, ed è dotato di design responsive grazie all’uso di Bootstrap.
+        L’accesso ai contenuti è facilitato da una sidebar di navigazione, filtri di ricerca e una timeline interattiva.
+      </p>
+    
+      <h3>Contenuti e Dati</h3>
+      <p>
+        I contenuti sono raccolti da fonti storiche, archivi online e database di videogiochi. Il sito include immagini, video, descrizioni e metainformazioni basate sullo standard Dublin Core.
+        I contenuti sono aggiornati periodicamente, con l’inserimento di nuovi titoli e approfondimenti.
+        Le immagini e i video sono principalmente reperiti da YouTube e Pinterest.
+      </p>
     </section>
     <section id="benchmark">
       <h2>Benchmark</h2>
       <!-- Competitor, punti di forza, spunti -->
+      <p>
+        Per realizzare un archivio storico di videogiochi efficace e completo, è stata svolta un'analisi
+        accurata di due importanti competitors del settore:
+      </p>
+    
+      <h3>1. <a href="https://www.mobygames.com/" target="_blank">MobyGames</a></h3>
+      <p>
+        Archivio storico e database dettagliato che raccoglie migliaia di titoli, coprendo diverse
+        piattaforme e periodi storici. Il sito presenta un’interfaccia chiara e ordinata, facilitando la
+        ricerca e la fruizione dei contenuti tramite sezioni ben definite e l'uso di filtri avanzati.
+      </p>
+      <strong>Punti di forza:</strong>
+      <ul>
+        <li>Ampiezza della collezione e dettaglio delle informazioni tecniche.</li>
+        <li>Sistema di categorizzazione preciso e navigazione user-friendly.</li>
+      </ul>
+      <strong>Spunti utili per il progetto:</strong>
+      <ul>
+        <li>Implementazione di un sistema efficace di filtri per anno, genere e popolarità.</li>
+        <li>Struttura ordinata e facilmente navigabile per migliorare l’usabilità del catalogo.</li>
+      </ul>
+    
+      <h3>2. <a href="https://www.giantbomb.com/" target="_blank">Giant Bomb</a></h3>
+      <p>
+        Sito con forte orientamento alla community, che valorizza l’interazione degli utenti
+        tramite recensioni, commenti e contenuti multimediali come video e podcast.
+      </p>
+      <strong>Punti di forza:</strong>
+      <ul>
+        <li>Forte componente interattiva e multimediale.</li>
+        <li>Coinvolgimento attivo della community attraverso commenti e discussioni.</li>
+      </ul>
+      <strong>Spunti utili per il progetto:</strong>
+      <ul>
+        <li>Introduzione di sezioni interattive, in particolare un sistema di commenti.</li>
+        <li>Integrazione di video gameplay da YouTube nelle pagine di dettaglio.</li>
+      </ul>
     </section>
     <section id="motivazione">
       <h2>Motivazione del nuovo sito</h2>
       <!-- Motivazione e valore aggiunto -->
+      <p>
+        Nonostante l’esistenza di piattaforme consolidate, il progetto <strong>Archivio Storico dei Videogiochi</strong> nasce con l’intento di colmare alcune lacune e rispondere a esigenze specifiche non sempre soddisfatte dai competitor.
+      </p>
+    
+      <h3>🖥️ Design moderno e responsive</h3>
+      <p>
+        Il sito adotta tecnologie moderne come HTML5, CSS3 e Bootstrap per garantire piena compatibilità con dispositivi desktop, tablet e mobile. L’esperienza utente è progettata per essere coerente, fluida e accessibile su qualsiasi schermo.
+      </p>
+    
+      <h3>🧠 Interattività avanzata</h3>
+      <p>
+        Sono utilizzati strumenti dinamici come <strong>timeline interattive</strong> e <strong>grafici con Chart.js</strong> per visualizzare l’evoluzione storica dei videogiochi in maniera coinvolgente e immediata.
+      </p>
+    
+      <h3>📚 Metadatazione avanzata</h3>
+      <p>
+        Ogni pagina di dettaglio dei videogiochi include <strong>meta tag Dublin Core</strong>, garantendo interoperabilità, indicizzazione efficace e compatibilità con sistemi di catalogazione digitale.
+      </p>
+    
+      <p>
+        In sintesi, il sito si distingue dai concorrenti grazie a un approccio progettuale moderno, interattivo e conforme agli <strong>standard avanzati del web semantico</strong>, offrendo un’esperienza unica e ricca di contenuti.
+      </p>
     </section>
     <section id="struttura">
       <h2>Struttura</h2>
       <!-- Mappa concettuale, schema, categorie -->
+
+      <h3>Mappa concettuale</h3>
+      <p>
+        La mappa concettuale rappresenta l’architettura informativa del progetto, evidenziando le sezioni principali del sito, i collegamenti tra homepage, catalogo, pagine di dettaglio e contenuti dinamici. Aiuta a formalizzare la logica di navigazione e a rendere chiaro il percorso dell’utente.
+      </p>
+      <img src="assets/img/mappaconcettuale.png" alt="Mappa Concettuale" style="max-width: 100%; margin: 20px 0; border: 1px solid #ccc; border-radius: 8px;">
+      <h3>Schema del progetto</h3>
+      <p>
+        La struttura dei file del progetto è modulare e ordinata per garantire una facile manutenzione. Le risorse sono suddivise in cartelle dedicate per HTML, CSS, JS e immagini, secondo la seguente organizzazione:
+      </p>
+    
+      <pre class="file-structure">
+    archivio-storico-videogiochi/
+    │
+    ├── index.html              (homepage)
+    ├── catalogo.html           (pagina catalogo)
+    ├── dettaglio.html          (pagina dinamica dei videogiochi)
+    ├── pong.html               (pagina statica per Pong)
+    ├── mario.html              (pagina statica per Super Mario Bros)
+    │
+    ├── assets/
+    │   ├── css/
+    │   │   ├── styles.css
+    │   │   ├── stylesCatalogo.css
+    │   │   └── game-details.css
+    │   ├── js/
+    │   │   ├── script.js
+    │   │   ├── catalogo.js
+    │   │   ├── dettaglio.js
+    │   │   └── comments.js
+    │   └── img/
+    │       ├── pong.jpg
+    │       ├── mario.jpg
+    │       └── [altre immagini]
+      </pre>
+    
+      <h3>Categorie descrittive dei videogiochi</h3>
+      <p>
+        Ogni videogioco è descritto attraverso una serie di categorie pensate per facilitare la ricerca, la classificazione e l’interoperabilità con altri archivi digitali. I metadati seguono lo standard <strong>Dublin Core</strong>.
+      </p>
+    
+      <div class="table-container">
+        <h4>Categorie principali</h4>
+        <table>
+          <thead>
+            <tr><th>Categoria</th><th>Descrizione</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Titolo</td><td>Nome ufficiale del videogioco</td></tr>
+            <tr><td>Creatore</td><td>Sviluppatore del gioco</td></tr>
+            <tr><td>Editore</td><td>Casa editrice che lo ha pubblicato</td></tr>
+            <tr><td>Anno di pubblicazione</td><td>Data di uscita</td></tr>
+            <tr><td>Genere</td><td>Categoria (es. Arcade, RPG, Puzzle)</td></tr>
+            <tr><td>Descrizione</td><td>Informazioni narrative e tecniche</td></tr>
+            <tr><td>Lingua</td><td>Lingua del contenuto</td></tr>
+            <tr><td>Tipo</td><td>Classificazione come videogioco</td></tr>
+            <tr><td>Immagine</td><td>Copertina del gioco</td></tr>
+            <tr><td>Video gameplay</td><td>Video dimostrativo embedded</td></tr>
+            <tr><td>Valutazione</td><td>Punteggio medio</td></tr>
+            <tr><td>Popolarità</td><td>Indice di gradimento</td></tr>
+            <tr><td>Copie vendute</td><td>Volume di diffusione</td></tr>
+            <tr><td>Commenti</td><td>Feedback degli utenti</td></tr>
+            <tr><td>Reazioni</td><td>Emoji lasciate ai commenti</td></tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="table-container">
+        <h4>Mappatura con Dublin Core</h4>
+        <table>
+          <thead>
+            <tr><th>Dublin Core</th><th>Categoria corrispondente</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>dc:title</td><td>Titolo</td></tr>
+            <tr><td>dc:creator</td><td>Creatore</td></tr>
+            <tr><td>dc:publisher</td><td>Editore</td></tr>
+            <tr><td>dc:date</td><td>Anno di pubblicazione</td></tr>
+            <tr><td>dc:subject</td><td>Genere</td></tr>
+            <tr><td>dc:description</td><td>Descrizione</td></tr>
+            <tr><td>dc:language</td><td>Lingua</td></tr>
+            <tr><td>dc:format</td><td>Formato</td></tr>
+            <tr><td>dc:type</td><td>Tipo</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="layout">
       <h2>Layout</h2>
       <!-- Architettura logica, wireframe -->
+      <h3>Architettura logica</h3>
+      <p>
+        Il sito segue una struttura gerarchica e modulare. La homepage rappresenta il punto di ingresso principale e da essa l’utente può navigare verso il catalogo, le pagine di dettaglio, la timeline interattiva e le statistiche.
+      </p>
+      <p>
+        Ogni pagina è progettata per garantire coerenza visiva, accessibilità e facilità di navigazione, grazie a sidebar fisse, link ben strutturati e layout responsive.
+      </p>
+    
+      <h3>Wireframes delle pagine principali</h3>
+    
+      <h4>Homepage (index.html)</h4>
+      <p>
+        La homepage presenta la descrizione del progetto, la timeline storica, statistiche, una citazione famosa e la sezione contatti. Tutto è organizzato in blocchi ben distinti.
+      </p>
+      <img src="assets/img/homepage.png" alt="Wireframe Homepage" style="max-width: 100%; border: 1px solid #ccc; margin: 20px 0; border-radius: 8px;">
+    
+      <h4>Catalogo (catalogo.html)</h4>
+      <p>
+        Il catalogo mostra una griglia di videogiochi filtrabile per genere, anno e titolo. Le card sono responsive e presentano titolo, immagine e link alla pagina di dettaglio.
+      </p>
+      <img src="assets/img/catalogo.png" alt="Wireframe Catalogo" style="max-width: 100%; border: 1px solid #ccc; margin: 20px 0; border-radius: 8px;">
+    
+      <h4>Pagina di dettaglio (dettaglio.html)</h4>
+      <p>
+        Ogni pagina di dettaglio fornisce informazioni approfondite sul videogioco selezionato: titolo, copertina, descrizione, metadati Dublin Core, embed video di gameplay, statistiche e commenti dinamici.
+      </p>
+      <img src="assets/img/dettaglio.png" alt="Wireframe Dettaglio" style="max-width: 100%; border: 1px solid #ccc; margin: 20px 0; border-radius: 8px;">
+    
+      <h3>Conclusione</h3>
+      <p>
+        Il layout è progettato per offrire un'esperienza utente coerente, moderna e intuitiva. I wireframe hanno guidato la realizzazione delle pagine, assicurando che ogni componente fosse ben posizionato, accessibile e funzionale in ottica responsive.
+      </p>
     </section>
     <section id="accessibilita">
       <h2>Accessibilità e Usabilità</h2>
       <!-- Accessibilità, usabilità, tabella di confronto -->
+      <h3>Accessibilità</h3>
+      <p>
+        Il progetto è sviluppato seguendo buone pratiche di accessibilità web per garantire la fruizione del contenuto anche a utenti con esigenze particolari. Sono state adottate le seguenti strategie:
+      </p>
+      <ul>
+        <li>Struttura HTML semantica e ben marcata.</li>
+        <li>Sidebar di navigazione sempre visibile con evidenziazione della sezione attiva.</li>
+        <li>Contrasto elevato tra testo e sfondo per migliorare la leggibilità.</li>
+        <li>Testi ben spaziati e dimensioni leggibili anche su dispositivi mobili.</li>
+        <li>Elementi interattivi con aree cliccabili estese e chiare.</li>
+      </ul>
+
+      <h3>Usabilità</h3>
+      <p>
+        Il sito è progettato per offrire un’esperienza utente semplice, ordinata e fluida:
+      </p>
+      <ul>
+        <li>Layout pulito e box ben separati visivamente.</li>
+        <li>Font coerente e moderno (Poppins) per una buona leggibilità.</li>
+        <li>Navigazione fluida con link chiari, breadcrumb e pulsanti visibili.</li>
+        <li>Effetti visivi (hover, scaling) su elementi cliccabili per migliorare il feedback visivo.</li>
+      </ul>
+
+      <h3>Layout Responsive</h3>
+      <p>
+        Il sito è progettato per adattarsi dinamicamente a diverse risoluzioni:
+      </p>
+      <ul>
+        <li>Sidebar visibile su desktop, adattata su mobile.</li>
+        <li>Struttura dei contenuti che si ridistribuisce su una colonna singola in schermi piccoli.</li>
+        <li>Griglia flessibile nel catalogo: le card passano da più colonne a una sola su mobile.</li>
+        <li>Bottoni e testi scalabili per una buona esperienza touch.</li>
+      </ul>
+
+      <h3>Tabella di confronto</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Caratteristica</th>
+              <th>Accessibilità</th>
+              <th>Usabilità</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Obiettivo</td>
+              <td>Contenuti leggibili e chiari</td>
+              <td>Esperienza utente fluida e intuitiva</td>
+            </tr>
+            <tr>
+              <td>Struttura</td>
+              <td>Box e sezioni ben definiti</td>
+              <td>Layout ordinato e coerente</td>
+            </tr>
+            <tr>
+              <td>Interazione</td>
+              <td>Bottoni e link ben visibili</td>
+              <td>Hover e scaling per il feedback visivo</td>
+            </tr>
+            <tr>
+              <td>Esperienza utente</td>
+              <td>Contrasto elevato e font leggibile</td>
+              <td>Navigazione semplice e coerente</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="servizi">
       <h2>Servizi (Funzionalità dinamiche)</h2>
       <!-- Elementi dinamici, commenti, filtri, future aggiunte -->
+      <h3>1. Elementi Dinamici</h3>
+      <p>
+        Il sito integra diverse funzionalità dinamiche realizzate in JavaScript, con aggiornamenti in tempo reale e interfacce fluide che migliorano l’interazione dell’utente.
+      </p>
+      <ul>
+        <li><strong>Filtri nel catalogo:</strong> selezione per genere, anno e popolarità.</li>
+        <li><strong>Ordinamento dinamico:</strong> alfabetico o per anno di pubblicazione.</li>
+        <li><strong>Commenti interattivi:</strong> gli utenti possono scrivere e reagire con emoji.</li>
+        <li><strong>Timeline scorrevole:</strong> evidenziazione degli eventi storici nel tempo.</li>
+        <li><strong>Grafici con Chart.js:</strong> statistiche aggiornate dinamicamente.</li>
+        <li><strong>Bottone "Torna su":</strong> per migliorare la navigazione lunga.</li>
+        <li><strong>Hover e transizioni CSS:</strong> rendono l’esperienza visiva più chiara e moderna.</li>
+      </ul>
+    
+      <h3>2. Interattività del Catalogo</h3>
+      <p>
+        La pagina <code>catalogo.html</code> è uno dei cuori dinamici del sito. Utilizzando <code>catalogo.js</code>, consente:
+      </p>
+      <ul>
+        <li>Ricerca istantanea per titolo.</li>
+        <li>Filtri combinati per genere, anno e popolarità.</li>
+        <li>Ordinamento in tempo reale dei risultati.</li>
+        <li>Card responsive con link diretto alla pagina statica o dinamica di dettaglio.</li>
+      </ul>
+    
+      <h3>3. Sistema di Commenti e Reazioni</h3>
+      <p>
+        Ogni videogioco ha una sezione commenti dinamica gestita da <code>comments.js</code>. Gli utenti possono:
+      </p>
+      <ul>
+        <li>Scrivere un commento (senza ricaricare la pagina).</li>
+        <li>Lasciare reazioni con emoji (👍 ❤️ 😂), aggiornate in tempo reale.</li>
+        <li>I dati sono memorizzati con <code>localStorage</code> lato client.</li>
+      </ul>
+    
+      <h3>4. Timeline e Grafici Interattivi</h3>
+    
+      <h4>📅 Timeline Interattiva</h4>
+      <p>
+        La homepage presenta una timeline scorrevole che mostra i principali videogiochi per anno. I dati sono caricati da <code>script.js</code>, e la navigazione è fluida con pulsanti avanti/indietro.
+      </p>
+    
+      <h4>📊 Grafico "Giochi per anno"</h4>
+      <p>
+        Nella sezione statistiche della homepage, viene mostrato un grafico interattivo realizzato con Chart.js che visualizza il numero di videogiochi pubblicati per anno.
+      </p>
+      <ul>
+        <li>Interazione mouse-over con tooltip informativi.</li>
+        <li>Aggiornamento dinamico da dati JavaScript.</li>
+      </ul>
+    
+      <h3>5. Possibili sviluppi futuri</h3>
+      <p>
+        Il progetto è pensato per essere ampliato con nuove funzionalità. Alcune idee future includono:
+      </p>
+      <ul>
+        <li><strong>Login e autenticazione:</strong> per gestione dei commenti da parte degli utenti registrati.</li>
+        <li><strong>Pagina dei giochi di tendenza:</strong> basata su popolarità e interazioni.</li>
+        <li><strong>Integrazione con Google Analytics:</strong> per analisi avanzata del traffico.</li>
+        <li><strong>Sistema di votazione:</strong> per generare classifiche dinamiche.</li>
+        <li><strong>Modalità dark mode:</strong> attivabile tramite toggle.</li>
+      </ul>
     </section>
     <section id="bibliografia">
       <h2>Bibliografia</h2>
       <!-- Fonti, strumenti, link -->
+      <h3>📚 Fonti dei contenuti</h3>
+      <ul>
+        <li><strong>Wikipedia</strong> – Descrizioni testuali e contesto storico dei videogiochi.</li>
+        <li><a href="https://www.mobygames.com/" target="_blank">MobyGames</a> – Dati tecnici, date di rilascio e metadatazione.</li>
+        <li><a href="https://www.giantbomb.com/" target="_blank">Giant Bomb</a> – Struttura delle pagine, commenti e contenuti multimediali.</li>
+        <li><strong>YouTube</strong> – Embed di gameplay video ufficiali o amatoriali.</li>
+      </ul>
+    
+      <h3>🖼️ Fonti per immagini</h3>
+      <ul>
+        <li><strong>Pinterest</strong> – Copertine e screenshot dei videogiochi d’epoca.</li>
+      </ul>
+    
+      <h3>🛠️ Strumenti e tecnologie utilizzate</h3>
+      <table class="table-container">
+        <thead>
+          <tr><th>Categoria</th><th>Strumento</th><th>Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Linguaggi</td>
+            <td>HTML5 / CSS3 / JavaScript</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Libreria grafica</td>
+            <td>Chart.js</td>
+            <td><a href="https://www.chartjs.org" target="_blank">chartjs.org</a></td>
+          </tr>
+          <tr>
+            <td>Wireframing</td>
+            <td>Draw.io / Canva</td>
+            <td><a href="https://app.diagrams.net" target="_blank">diagrams.net</a></td>
+          </tr>
+          <tr>
+            <td>Font</td>
+            <td>Google Fonts - Poppins</td>
+            <td><a href="https://fonts.google.com" target="_blank">fonts.google.com</a></td>
+          </tr>
+          <tr>
+            <td>Icone</td>
+            <td>Bootstrap Icons + Emoji standard</td>
+            <td><a href="https://icons.getbootstrap.com" target="_blank">bootstrap icons</a></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
 
