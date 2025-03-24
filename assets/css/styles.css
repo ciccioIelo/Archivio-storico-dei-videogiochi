@@ -263,9 +263,12 @@ footer {
       padding: 10px;
   }
   .main-content {
-      margin-left: 190px;
-      max-width: calc(100% - 190px);
-      padding: 15px;
+    margin-left: 0 !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    margin-right: 0;
+    text-align: center;
   }
   .stats-container {
       flex-direction: column;
@@ -274,6 +277,36 @@ footer {
   .quote-container {
       font-size: 1rem;
       padding: 15px;
+  }
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1500;
+  }
+
+  .sidebar.open {
+      left: 0;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .timeline-navigation {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .timeline-content {
+    justify-content: center;
   }
 }
 
@@ -284,9 +317,12 @@ footer {
       padding: 0.8rem;
   }
   .main-content {
-      margin-left: 160px;
-      max-width: calc(100% - 160px);
-      padding: 10px;
+    margin-left: 0 !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 15px;
+    margin-right: 0;
+    text-align: center;
   }
 }
 
@@ -311,3 +347,51 @@ footer {
   margin-top: 30px; 
 }
 
+/*Stile di base per il pulsante hamburger */
+.hamburger-btn {
+  display: none; /* di default nascosto su schermi grandi */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2000; /* per stare sopra la sidebar */
+}
+
+/* Barre orizzontali dell'hamburger */
+.hamburger-btn .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+  background-color: #ffd700;
+  transition: 0.4s;
+}
+
+/* Quando la sidebar è "chiusa" su mobile viene posizionata fuori dallo schermo */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; 
+    left: -250px; /* la spostiamo fuori schermo */
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1500; 
+  }
+
+  /* Quando la sidebar ha la classe .open, la riportiamo in vista */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* La main-content deve occupare tutto lo spazio quando la sidebar è chiusa */
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  /* Mostra l'hamburger button su mobile */
+  .hamburger-btn {
+    display: block; 
+  }
+}

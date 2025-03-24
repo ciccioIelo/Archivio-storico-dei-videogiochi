@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ==================================================
     // 1. DATI & VARIABILI PER LA TIMELINE
-    // ==================================================
     const games = [
         // Anni '70
         { 
@@ -111,10 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
-    // ==================================================
     // 2. FUNZIONI PER LA TIMELINE
-    // ==================================================
-    // Determina il link di dettaglio in base al titolo del gioco
     function getDetailsLink(gameTitle) {
         if (gameTitle === "Pong") {
             return "pong.html";
@@ -194,11 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Render iniziale della timeline
     renderTimeline();
 
-
-    // ==================================================
     // 3. CHART.JS: GRAFICO "GIOCHI PER ANNO"
-    // ==================================================
-    // Funzione per raggruppare i videogiochi per anno
     function getGamesPerYear(gamesArray) {
         const countByYear = {};
 
@@ -226,13 +217,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return { labels, data };
     }
 
-    // Se esiste il canvas #gamesChart nel DOM, costruiamo il grafico
     const chartCanvas = document.getElementById('gamesChart');
     if (chartCanvas) {
-        // 1. Estraiamo i dati da visualizzare
         const { labels, data } = getGamesPerYear(games);
 
-        // 2. Creiamo il grafico con Chart.js
         const ctx = chartCanvas.getContext('2d');
         new Chart(ctx, {
             type: 'bar',
@@ -242,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     label: 'Numero di videogiochi pubblicati',
                     data: data,
                     borderWidth: 1,
-                    // Puoi aggiungere "backgroundColor" o "borderColor" se vuoi personalizzare
                 }]
             },
             options: {
@@ -264,4 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (hamburgerBtn && sidebar) {
+        hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });}
 });
